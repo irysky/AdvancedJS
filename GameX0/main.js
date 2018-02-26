@@ -1,5 +1,6 @@
 var clickNumber = 0;
 var player = 1;
+var points = '';
   function Counter() {
     document.getElementsByClassName("gamecontainer")[0].addEventListener("click", function (event) {
       console.log(event.target.nodeName);
@@ -16,8 +17,21 @@ var player = 1;
           }
 
           b = document.getElementsByTagName('button');
-          if (b[0].innerText != "" && b[0].innerText == b[1].innerText && b[1].innerText == b[2].innerText) {
-            alert("Winner")
+          if (
+            (b[0].innerText != "" && b[0].innerText == b[1].innerText && b[1].innerText == b[2].innerText)||
+            (b[3].innerText != "" && b[3].innerText == b[4].innerText && b[4].innerText == b[5].innerText)||
+            (b[6].innerText != "" && b[6].innerText == b[7].innerText && b[7].innerText == b[8].innerText)||
+            (b[0].innerText != "" && b[0].innerText == b[3].innerText && b[3].innerText == b[6].innerText)||
+            (b[1].innerText != "" && b[1].innerText == b[4].innerText && b[4].innerText == b[7].innerText)||
+            (b[2].innerText != "" && b[2].innerText == b[5].innerText && b[5].innerText == b[8].innerText)||
+            (b[0].innerText != "" && b[0].innerText == b[4].innerText && b[4].innerText == b[8].innerText)||
+            (b[2].innerText != "" && b[2].innerText == b[4].innerText && b[4].innerText == b[6].innerText)) {
+            alert("Winner");
+            points++;
+            for (i=0; i< b.length; i++) {
+              b[i].innerText = '';
+            }
+            clickNumber = 0;
           }
 
           document.getElementById('player').innerText = 'Player ' + player;
