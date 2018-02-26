@@ -1,0 +1,25 @@
+/*td {
+  border: 2px dashed grey;
+  width: 50px;
+  height: 40px;
+  color: navy;
+}*/
+.gamecontainer {
+  margin: 0 auto;
+  width: 310px;
+}
+.gamecontainer > div:not(:first-child){
+  margin-top: 3px;
+}
+#player{
+  text-align: right;
+}
+button {
+  display: inline-block;
+  width: 100px;
+  height:100px;
+  box-sizing: border-box;
+}
+#result{
+  display: none;
+}
